@@ -1,3 +1,41 @@
+function kgToLbs(weight: number | string): number {
+  // Narrowing
+  if (typeof weight === 'number')
+    return weight * 2.2;
+  else {
+    return parseInt(weight) * 2.2;
+  }
+}
+
+console.log(kgToLbs(10));
+
+console.log(kgToLbs('40kg'));
+
+
+type Employee = {
+  readonly id: number, 
+  name: string,
+  retire: (date: Date) => void
+}
+
+let employee: Employee = {
+    id: 1, 
+    name: '',
+    retire: (date: Date) => console.log(date)
+}
+
+
+
+
+function calculateTax(income: number, taxYear = 2022): number {
+
+  if (taxYear < 2022)
+    return income * 1.2;
+  return income * 1.3;
+}
+
+calculateTax(20, 2024);
+
 let numbers = [1,2,3, '5'];
 
 let user: [number, string] = [1, 'Wenwen'];
