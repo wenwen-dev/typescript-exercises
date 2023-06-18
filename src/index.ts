@@ -1,3 +1,56 @@
+type Customer = {
+  birthday?: Date
+}
+
+let customers: number[] = [1,2,3];
+// console.log(customers?.[5]);
+
+// let log: any = (message: string) => console.log(message);
+function log(name: string): void {
+  console.log(name);
+}
+
+log('a');
+
+
+
+
+function getCustomer(id: number): Customer | null | undefined {
+  return id === 0 ? null : {birthday: new Date()}
+}
+
+let customer = getCustomer(0);
+
+console.log(customer?.birthday?.getFullYear());
+
+
+//1. do functions always return undefined if no return value?
+// 2. 
+
+// if (customer !== null && customer !== undefined)
+//optional property access operator: "?."
+  // console.log(customer?.birthday);//will only execute if customer is null nor undefined (return undefined)
+
+
+
+function greet(name: String | null | undefined) {
+  if (name)
+    console.log(name.toUpperCase());
+  else
+    console.log('Hola');
+    
+}
+
+// greet(undefined);
+
+
+type Quantity = 50 | 51;
+
+let quantity: Quantity = 50;
+
+type Metric = 'cm' | 9;
+let measure: Metric = 'cm';
+
 type Draggable = {
   drag: () => void
 }
@@ -26,9 +79,9 @@ function kgToLbs(weight: number | string): number {
   }
 }
 
-console.log(kgToLbs(10));
+// console.log(kgToLbs(10));
 
-console.log(kgToLbs('40kg'));
+// console.log(kgToLbs('40kg'));
 
 
 type Employee = {
@@ -71,7 +124,7 @@ const enum Size3 {Small = 's', Medium = 'm', Large = 'l' }
 
 let mySize: Size2 = Size2.Medium;
 
-console.log(mySize);
+// console.log(mySize);
 
 
 // let sales: number = 123_456_789;

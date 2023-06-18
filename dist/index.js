@@ -1,4 +1,27 @@
 "use strict";
+var _a;
+let customers = [1, 2, 3];
+function log(name) {
+    console.log(name);
+}
+log('a');
+function getCustomer(id) {
+    return id === 0 ? null : { birthday: new Date() };
+}
+let customer = getCustomer(0);
+console.log((_a = customer === null || customer === void 0 ? void 0 : customer.birthday) === null || _a === void 0 ? void 0 : _a.getFullYear());
+function greet(name) {
+    if (name)
+        console.log(name.toUpperCase());
+    else
+        console.log('Hola');
+}
+let quantity = 50;
+let measure = 'cm';
+let textBox = {
+    drag: () => { },
+    resize: () => { }
+};
 function kgToLbs(weight) {
     if (typeof weight === 'number')
         return weight * 2.2;
@@ -6,8 +29,6 @@ function kgToLbs(weight) {
         return parseInt(weight) * 2.2;
     }
 }
-console.log(kgToLbs(10));
-console.log(kgToLbs('40kg'));
 let employee = {
     id: 1,
     name: '',
@@ -26,7 +47,6 @@ const small = 1;
 const medium = 2;
 const large = 3;
 let mySize = 2;
-console.log(mySize);
 let sales = 123456789;
 let course = 'TypeScript';
 let is_published = true;
