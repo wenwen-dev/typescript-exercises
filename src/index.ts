@@ -1,3 +1,13 @@
+let phone = document.getElementById('phone') as HTMLInputElement;
+
+// HTMLElement
+// HTMLInputElement, has a value property (from user)
+
+phone.value
+
+
+
+
 let speed: number | null = null;
 
 let ride = {
