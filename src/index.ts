@@ -1,3 +1,12 @@
+let speed: number | null = null;
+
+let ride = {
+  // speed: speed || 30 //if user enters 0 which is falsy, will be ignored and 30 used
+  // speed: speed !== null ? speed : 30
+  speed: speed ?? 30
+}
+
+
 type Customer = {
   birthday?: Date
 }
