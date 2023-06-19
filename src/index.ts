@@ -1,3 +1,7 @@
+function render(document: unknown) {
+  // document.fly()
+}
+
 let phone = document.getElementById('phone') as HTMLInputElement;
 
 // HTMLElement
@@ -155,9 +159,9 @@ let level;
 // level = 445;
 // level = "ssss";
 
-function render(document: any) {
-  console.log(document);
-}
+// function render(document: any) {
+//   console.log(document);
+// }
 
 
 
