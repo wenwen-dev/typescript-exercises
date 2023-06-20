@@ -1,5 +1,13 @@
 "use strict";
 var _a;
+function render(document) {
+}
+let phone = document.getElementById('phone');
+phone.value;
+let speed = null;
+let ride = {
+    speed: speed !== null && speed !== void 0 ? speed : 30
+};
 let customers = [1, 2, 3];
 function log(name) {
     console.log(name);
@@ -51,7 +59,4 @@ let sales = 123456789;
 let course = 'TypeScript';
 let is_published = true;
 let level;
-function render(document) {
-    console.log(document);
-}
 //# sourceMappingURL=index.js.map

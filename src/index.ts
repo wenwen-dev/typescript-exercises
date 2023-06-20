@@ -1,3 +1,22 @@
+function reject(msg: string) {
+  throw new Error(msg)
+}
+
+reject('...');
+console.log('error!');
+
+
+function processEvents(): never {
+  while (true) {
+
+
+  }
+}
+
+processEvents();
+
+
+
 function render(document: unknown) {
   // document.fly()
 }
@@ -6,8 +25,6 @@ let phone = document.getElementById('phone') as HTMLInputElement;
 
 // HTMLElement
 // HTMLInputElement, has a value property (from user)
-
-phone.value
 
 
 
