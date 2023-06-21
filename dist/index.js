@@ -1,11 +1,14 @@
 "use strict";
-var _a;
-let today = 1;
-let aDay = 'Tuesday';
-let aUser = {
-    address: {
-        city: 'v'
+class Account {
+    constructor(id, owner, balance) {
+        this.id = id;
+        this.owner = owner;
+        this.balance = balance;
     }
-};
-console.log((_a = aUser === null || aUser === void 0 ? void 0 : aUser.address) === null || _a === void 0 ? void 0 : _a.street);
+    deposit(amount) {
+        if (amount <= 0)
+            throw new Error('invalid amount');
+        this.balance += amount;
+    }
+}
 //# sourceMappingURL=index.js.map
