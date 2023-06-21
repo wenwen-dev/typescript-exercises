@@ -11,4 +11,8 @@ class Account {
         this.balance += amount;
     }
 }
+let account = new Account(123, 'potato', 50);
+account.deposit(50);
+console.log(typeof account);
+console.log(account instanceof Account);
 //# sourceMappingURL=index.js.map

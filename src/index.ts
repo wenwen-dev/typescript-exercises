@@ -1,10 +1,9 @@
-class Account { //Pascal
-  id: number;
+class Account {
+  readonly id: number;
   owner: string;
   balance: number;
+  nickname?: string;
 
-
-  // Qs: only initialise properties? not methods?
   constructor(id: number, owner: string, balance: number) {
     this.id = id;
     this.owner = owner;
@@ -18,3 +17,11 @@ class Account { //Pascal
 
   }
 }
+
+let account = new Account(123, 'potato', 50);
+
+account.deposit(50);
+console.log(typeof account);
+console.log(account instanceof Account);
+
+
