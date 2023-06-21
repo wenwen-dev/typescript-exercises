@@ -1,14 +1,18 @@
 "use strict";
 class Account {
-    constructor(id, owner, balance) {
+    constructor(id, owner, _balance, nickname) {
         this.id = id;
         this.owner = owner;
-        this._balance = balance;
+        this._balance = _balance;
+        this.nickname = nickname;
     }
     deposit(amount) {
         if (amount <= 0)
             throw new Error('invalid amount');
         this._balance += amount;
+        this.calculateTax();
+    }
+    calculateTax() {
     }
     getBalance() {
         return this._balance;
