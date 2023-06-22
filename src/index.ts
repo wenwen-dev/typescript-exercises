@@ -1,3 +1,16 @@
+class SeatAssignment {
+  // A1: 'w';
+  // A2: 'p';
+  // A3: 'k';
+  [seatNumber: string]: string;
+}
+
+let seats = new SeatAssignment();
+seats.hi = 'potato';
+seats['A2'] = '6';
+
+
+
 class Account {
 
   constructor(
