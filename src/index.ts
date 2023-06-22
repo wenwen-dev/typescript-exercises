@@ -1,3 +1,41 @@
+class Person {
+  constructor(
+    public firstName: string,
+    public lastName: string
+  ) {}
+
+  get fullName(): string {
+    return this.firstName + ' ' + this.lastName;
+  }
+
+  walk(): void {
+    console.log('walking...');
+  }
+}
+
+
+class Student extends Person {
+  constructor(public studentID: number, firstName: string, lastName: string) {
+    super(firstName, lastName);
+  }
+
+  study(): void {
+    console.log('studying...');
+    
+  }
+
+}
+
+let student = new Student(2, 'potato', 'wang');
+
+
+
+
+
+
+
+
+
 class Ride {
   private static _activeRides: number = 0;
 
