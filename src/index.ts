@@ -19,8 +19,14 @@ class Account {
 
   }
 
-  getBalance(): number {
+  get balance(): number {
     return this._balance;
+  }
+
+  set balance(value: number) {
+    if (value <= 0)
+      throw new Error('invalid value');
+    this._balance = value;
   }
 
 }
@@ -28,11 +34,9 @@ class Account {
 let account = new Account(123, 'potato', 60);
 
 account.deposit(50);
-console.log(typeof account);
-console.log(account instanceof Account);
 
+account.balance = 10;
 
-console.log(account.getBalance());
 
 
 
