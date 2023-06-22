@@ -1,3 +1,32 @@
+class Ride {
+  private static _activeRides: number = 0;
+
+  start(): void {
+    Ride._activeRides++;
+
+  }
+
+  stop(): void {
+    Ride._activeRides--;
+
+  }
+
+  static get activeRides(): number {
+    return Ride._activeRides;
+  }
+}
+
+let ride1 = new Ride();
+ride1.start();
+let ride2 = new Ride();
+
+ride2.start();
+
+console.log(Ride.activeRides);
+
+
+
+
 class SeatAssignment {
   // A1: 'w';
   // A2: 'p';
