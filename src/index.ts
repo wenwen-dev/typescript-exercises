@@ -1,18 +1,58 @@
-interface Person {
+class Logger {
+  constructor(public fileName: string) {}
+  writeToFile(message: string): void {
+  }
+}
+
+class Person {
+  constructor(public firstName: string, public lastName: string) {}
+
+  get fullName(): string {
+    // return this.firstName + ' ' + this.lastName;
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+class Employee extends Person {
+  constructor(public salary: number, firstName: string, lastName: string) {
+    super(firstName, lastName);
+  }
+} //q: anything else after calling super()? a: nope, coz the salary property is created, nothing else needs to be done
+
+
+//private: only visible within the class; protected: is also visible to its sub classes
+
+interface Employee {
   name: string;
+  salary: number;
+  address: Address;
 }
 
-let person: Person = {
-  name: 'potato'
-};
-
-type People = {
-  name: string;
+interface Address {
+  street: string;
+  city: string;
+  zipCode: number;
 }
 
-let people: People = {
-  name: 'kai'
-}
+
+
+
+
+// interface Person {
+//   name: string;
+// }
+
+// let person: Person = {
+//   name: 'potato'
+// };
+
+// type People = {
+//   name: string;
+// }
+
+// let people: People = {
+//   name: 'kai'
+// }
 
 // // Calendar: GOogleCal, AppleCal, OutlookCal
 
