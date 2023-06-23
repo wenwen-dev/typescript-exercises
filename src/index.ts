@@ -14,6 +14,16 @@ class Person {
 }
 
 
+class Teacher extends Person {
+  override get fullName(): string {
+    return 'Professor ' + super.fullName;
+  }
+}
+
+let teacher = new Teacher('potato', 'w');
+console.log(teacher.fullName);
+
+
 class Student extends Person {
   constructor(public studentID: number, firstName: string, lastName: string) {
     super(firstName, lastName);

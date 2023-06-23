@@ -11,11 +11,27 @@ class Person {
         console.log('walking...');
     }
 }
-class Student extends Person {
-    study() { }
+console.dir(Person);
+let testPerson = new Person('testFirstName', 'testLastName');
+console.log(testPerson);
+console.dir(testPerson);
+class Teacher extends Person {
+    get fullName() {
+        return 'Professor ' + super.fullName;
+    }
 }
-let student = new Student('a', 'b');
-console.log(student);
+let teacher = new Teacher('potato', 'w');
+console.log(teacher.fullName);
+class Student extends Person {
+    constructor(studentID, firstName, lastName) {
+        super(firstName, lastName);
+        this.studentID = studentID;
+    }
+    study() {
+        console.log('studying...');
+    }
+}
+let student = new Student(2, 'potato', 'wang');
 class Ride {
     start() {
         Ride._activeRides++;
