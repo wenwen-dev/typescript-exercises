@@ -11,10 +11,6 @@ class Person {
         console.log('walking...');
     }
 }
-console.dir(Person);
-let testPerson = new Person('testFirstName', 'testLastName');
-console.log(testPerson);
-console.dir(testPerson);
 class Teacher extends Person {
     get fullName() {
         return 'Professor ' + super.fullName;
@@ -31,7 +27,22 @@ class Student extends Person {
         console.log('studying...');
     }
 }
+class Principal extends Person {
+    get fullName() {
+        return 'Principal ' + super.fullName;
+    }
+}
 let student = new Student(2, 'potato', 'wang');
+function printNames(persons) {
+    for (let person of persons) {
+        console.log('aha ' + person.fullName);
+    }
+}
+printNames([
+    new Student(1, 'potato', 'wang'),
+    new Teacher('wenwen', 'wang'),
+    new Principal('kai', 'zhou')
+]);
 class Ride {
     start() {
         Ride._activeRides++;

@@ -1,3 +1,6 @@
+
+
+
 class Person {
   constructor(
     public firstName: string,
@@ -33,12 +36,27 @@ class Student extends Person {
     console.log('studying...');
     
   }
+}
 
+class Principal extends Person {
+  override get fullName(): string {
+    return 'Principal ' + super.fullName;
+  }
 }
 
 let student = new Student(2, 'potato', 'wang');
 
+function printNames(persons: Person[]) {
+  for (let person of persons) {
+    console.log('aha ' + person.fullName);
+  }
+}
 
+printNames([
+  new Student(1, 'potato', 'wang'),
+  new Teacher('wenwen', 'wang'),
+  new Principal('kai', 'zhou')
+]);
 
 
 
