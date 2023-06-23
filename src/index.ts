@@ -11,10 +11,11 @@ class Person {
     return this.firstName + ' ' + this.lastName;
   }
 
-  walk(): void {
+  protected walk(): void {
     console.log('walking...');
   }
 }
+
 
 
 class Teacher extends Person {
@@ -33,6 +34,7 @@ class Student extends Person {
   }
 
   study(): void {
+    this.walk
     console.log('studying...');
     
   }
@@ -43,6 +45,15 @@ class Principal extends Person {
     return 'Principal ' + super.fullName;
   }
 }
+
+let person = new Person('ss', 's');
+let principal = new Principal('3', '4');
+// principal.walk - would not work on protected, coz outside of classes
+
+
+
+
+
 
 let student = new Student(2, 'potato', 'wang');
 
