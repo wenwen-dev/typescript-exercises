@@ -1,172 +1,222 @@
-abstract class Shape {
-  constructor(public color: string) {}
-  abstract render(): void;
+interface Person {
+  name: string;
 }
 
-class Circle extends Shape {
-  constructor(public radius: number, color: string) {
-    super(color);
-  }
-  override render(): void {
-    console.log('rendering a circle');
-  }
+let person: Person = {
+  name: 'potato'
+};
+
+type People = {
+  name: string;
 }
 
-
-class Person {
-  constructor(
-    public firstName: string,
-    public lastName: string
-  ) {}
-
-  get fullName(): string {
-    return this.firstName + ' ' + this.lastName;
-  }
-
-  protected walk(): void {
-    console.log('walking...');
-  }
+let people: People = {
+  name: 'kai'
 }
 
+// // Calendar: GOogleCal, AppleCal, OutlookCal
 
+// abstract class Calendar {
+//   constructor(public name: string) {}
+//   abstract addEvent(): void;
+//   abstract removeEvent(): void;
+// }
 
-class Teacher extends Person {
-  override get fullName(): string {
-    return 'Professor ' + super.fullName;
-  }
+interface Calendar {
+  name: string;
+  addEvent(): void;
+  removeEvent(): void;
 }
 
-let teacher = new Teacher('potato', 'w');
-console.log(teacher.fullName);
-
-
-class Student extends Person {
-  constructor(public studentID: number, firstName: string, lastName: string) {
-    super(firstName, lastName);
+class GoogleCalendar implements Calendar {
+  constructor(public name: string) {}
+  addEvent(): void {
+    throw new Error("Method not implemented.");
+  }
+  removeEvent(): void {
+    throw new Error("Method not implemented.");
   }
 
-  study(): void {
-    this.walk
-    console.log('studying...');
+}
+// class AppleCalendar extends Calendar {
+//   override addEvent(): void {
     
-  }
-}
+//   }
 
-class Principal extends Person {
-  override get fullName(): string {
-    return 'Principal ' + super.fullName;
-  }
-}
+//   override removeEvent(): void {
+    
+//   }
+// }
 
-let person = new Person('ss', 's');
-let principal = new Principal('3', '4');
-// principal.walk - would not work on protected, coz outside of classes
+// abstract class Shape {
+//   constructor(public color: string) {}
+//   abstract render(): void;
+// }
 
-
-
-
-
-
-let student = new Student(2, 'potato', 'wang');
-
-function printNames(persons: Person[]) {
-  for (let person of persons) {
-    console.log('aha ' + person.fullName);
-  }
-}
-
-printNames([
-  new Student(1, 'potato', 'wang'),
-  new Teacher('wenwen', 'wang'),
-  new Principal('kai', 'zhou')
-]);
+// class Circle extends Shape {
+//   constructor(public radius: number, color: string) {
+//     super(color);
+//   }
+//   override render(): void {
+//     console.log('rendering a circle');
+//   }
+// }
 
 
+// class Person {
+//   constructor(
+//     public firstName: string,
+//     public lastName: string
+//   ) {}
 
+//   get fullName(): string {
+//     return this.firstName + ' ' + this.lastName;
+//   }
 
-
-
-
-class Ride {
-  private static _activeRides: number = 0;
-
-  start(): void {
-    Ride._activeRides++;
-
-  }
-
-  stop(): void {
-    Ride._activeRides--;
-
-  }
-
-  static get activeRides(): number {
-    return Ride._activeRides;
-  }
-}
-
-let ride1 = new Ride();
-ride1.start();
-let ride2 = new Ride();
-
-ride2.start();
-
-console.log(Ride.activeRides);
+//   protected walk(): void {
+//     console.log('walking...');
+//   }
+// }
 
 
 
+// class Teacher extends Person {
+//   override get fullName(): string {
+//     return 'Professor ' + super.fullName;
+//   }
+// }
 
-class SeatAssignment {
-  // A1: 'w';
-  // A2: 'p';
-  // A3: 'k';
-  [seatNumber: string]: string;
-}
-
-let seats = new SeatAssignment();
-seats.hi = 'potato';
-seats['A2'] = '6';
+// let teacher = new Teacher('potato', 'w');
+// console.log(teacher.fullName);
 
 
+// class Student extends Person {
+//   constructor(public studentID: number, firstName: string, lastName: string) {
+//     super(firstName, lastName);
+//   }
 
-class Account {
+//   study(): void {
+//     this.walk
+//     console.log('studying...');
+    
+//   }
+// }
 
-  constructor(
-    public readonly id: number,
-    public owner: string,
-    private _balance: number,
-    public nickname?: string) {
+// class Principal extends Person {
+//   override get fullName(): string {
+//     return 'Principal ' + super.fullName;
+//   }
+// }
 
-  }
+// let person = new Person('ss', 's');
+// let principal = new Principal('3', '4');
+// // principal.walk - would not work on protected, coz outside of classes
 
-  deposit(amount: number): void {
-    if (amount <= 0)
-      throw new Error('invalid amount');
-    this._balance += amount;
-    this.calculateTax();
-  }
 
-  private calculateTax(){
 
-  }
 
-  get balance(): number {
-    return this._balance;
-  }
 
-  set balance(value: number) {
-    if (value <= 0)
-      throw new Error('invalid value');
-    this._balance = value;
-  }
 
-}
+// let student = new Student(2, 'potato', 'wang');
 
-let account = new Account(123, 'potato', 60);
+// function printNames(persons: Person[]) {
+//   for (let person of persons) {
+//     console.log('aha ' + person.fullName);
+//   }
+// }
 
-account.deposit(50);
+// printNames([
+//   new Student(1, 'potato', 'wang'),
+//   new Teacher('wenwen', 'wang'),
+//   new Principal('kai', 'zhou')
+// ]);
 
-account.balance = 10;
+
+
+
+
+
+
+// class Ride {
+//   private static _activeRides: number = 0;
+
+//   start(): void {
+//     Ride._activeRides++;
+
+//   }
+
+//   stop(): void {
+//     Ride._activeRides--;
+
+//   }
+
+//   static get activeRides(): number {
+//     return Ride._activeRides;
+//   }
+// }
+
+// let ride1 = new Ride();
+// ride1.start();
+// let ride2 = new Ride();
+
+// ride2.start();
+
+// console.log(Ride.activeRides);
+
+
+
+
+// class SeatAssignment {
+//   // A1: 'w';
+//   // A2: 'p';
+//   // A3: 'k';
+//   [seatNumber: string]: string;
+// }
+
+// let seats = new SeatAssignment();
+// seats.hi = 'potato';
+// seats['A2'] = '6';
+
+
+
+// class Account {
+
+//   constructor(
+//     public readonly id: number,
+//     public owner: string,
+//     private _balance: number,
+//     public nickname?: string) {
+
+//   }
+
+//   deposit(amount: number): void {
+//     if (amount <= 0)
+//       throw new Error('invalid amount');
+//     this._balance += amount;
+//     this.calculateTax();
+//   }
+
+//   private calculateTax(){
+
+//   }
+
+//   get balance(): number {
+//     return this._balance;
+//   }
+
+//   set balance(value: number) {
+//     if (value <= 0)
+//       throw new Error('invalid value');
+//     this._balance = value;
+//   }
+
+// }
+
+// let account = new Account(123, 'potato', 60);
+
+// account.deposit(50);
+
+// account.balance = 10;
 
 
 
