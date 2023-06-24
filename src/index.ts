@@ -1,3 +1,28 @@
+// http://mywebsite.com/users
+// http://mywebsite.com/products
+
+interface Result<T> {
+// when declaring interface, interface name followed by '<T>'; 
+  data: T | null;
+  // use T
+  error: string | null;
+}
+function fetch<T>(url: string): Result<T> {
+  // because function returns a generic result, we need to also add the <T> right after function name too.
+  return {data: null, error: null}
+}
+interface User {
+  username: string;
+}
+interface Product {
+  title: string;
+}
+
+let result = fetch<Product>('anUrl');
+ //need to specify because tsc can't infer from generic type here
+
+ result.data?.title
+
 class ArrayUtils {
   
   static wrapInArray<T>(value: T) {
