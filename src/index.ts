@@ -1,3 +1,23 @@
+class ArrayUtils {
+  
+  static wrapInArray<T>(value: T) {
+    return [value];
+  }
+
+}
+
+
+
+let numbers = ArrayUtils.wrapInArray('3');
+
+class KeyValuePair<K, V> {
+  constructor(public key: K, public value: V) {}
+}
+
+let pair = new KeyValuePair(6, 'hello') //can implicitly annotate type, not using <>
+
+
+
 class Logger {
   constructor(public fileName: string) {}
   writeToFile(message: string): void {
