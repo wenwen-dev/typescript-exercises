@@ -1,3 +1,18 @@
+class Person {
+  constructor(public name: string) {}
+}
+
+class Customer extends Person {}
+
+function echo<T extends Person>(value: T): T {
+  return value;
+}
+
+echo(new Customer('aha'))
+echo({name: 'pp'})
+
+
+
 // http://mywebsite.com/users
 // http://mywebsite.com/products
 
@@ -49,20 +64,20 @@ class Logger {
   }
 }
 
-class Person {
-  constructor(public firstName: string, public lastName: string) {}
+// class Person {
+//   constructor(public firstName: string, public lastName: string) {}
 
-  get fullName(): string {
-    // return this.firstName + ' ' + this.lastName;
-    return `${this.firstName} ${this.lastName}`;
-  }
-}
+//   get fullName(): string {
+//     // return this.firstName + ' ' + this.lastName;
+//     return `${this.firstName} ${this.lastName}`;
+//   }
+// }
 
-class Employee extends Person {
-  constructor(public salary: number, firstName: string, lastName: string) {
-    super(firstName, lastName);
-  }
-} //q: anything else after calling super()? a: nope, coz the salary property is created, nothing else needs to be done
+// class Employee extends Person {
+//   constructor(public salary: number, firstName: string, lastName: string) {
+//     super(firstName, lastName);
+//   }
+// } //q: anything else after calling super()? a: nope, coz the salary property is created, nothing else needs to be done
 
 
 //private: only visible within the class; protected: is also visible to its sub classes
