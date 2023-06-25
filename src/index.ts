@@ -3,6 +3,33 @@ interface Product {
   price: number;
 }
 
+type ReadOnlyProduct = {
+  readonly [K in keyof Product]: Product[K]
+}
+
+type ReadOnly<T> = {
+  readonly [K in keyof T]: T[K]
+}
+
+type Optional<T> = {
+  [K in keyof T]?: T[K]
+}
+
+type Nullable<T> = {
+  [K in keyof T]: T[K] | null;
+}
+
+
+let product: ReadOnly<Product> = {
+  name: 'shoes',
+  price: 100
+}
+
+
+
+
+
+
 class Store<T> { //store Products, Orders, Carts etc.
    protected _objects: T[] = [];
 
