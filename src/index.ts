@@ -9,7 +9,20 @@ class Store<T> { //store Products, Orders, Carts etc.
   add(obj: T): void {
     this._objects.push(obj);
   }
+
+  find(property: keyof T, value: unknown): T | undefined {
+    return this._objects.find(obj => obj[property] === value)
+  }
 }
+
+let store = new Store<Product>();
+store.add({ name: 'shoes', price: 100});
+store.find('name', 'shoes'); 
+store.find('price', 100); 
+// store.find('ahahahah', 100); // will throw error coz property nonexistent
+
+
+
 
 
 // Pass on the generic type parameter
@@ -17,16 +30,15 @@ class CompressibleStore<T> extends Store<T> {
   compress() {}
 }
 
-let store = new CompressibleStore<Product>() // could it be <V> <T>?
 
 // restricting the generic type parameter
 
-class SearchableStore<T extends {name: string}> extends Store<T> {
-  find(name: string): T | undefined {
-    // return this._objects.find(obj => obj.name === name)
-    return this._objects.find(obj => obj.name === name)
-  }
-}
+// class SearchableStore<T extends {name: string}> extends Store<T> {
+//   find(name: string): T | undefined {
+//     // return this._objects.find(obj => obj.name === name)
+//     return this._objects.find(obj => obj.name === name)
+//   }
+// }
 
 // certain operations can only be conducted on Products
 class ProductStore extends Store<Product> {
