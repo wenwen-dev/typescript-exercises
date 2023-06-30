@@ -1,12 +1,4 @@
-// import { Circle } from "./shapes";
-import Store, { Format } from "./storage";
-
-import { Circle } from "./shapes";
-
-let circle = new Circle(2);
-
-console.log(circle.radius);
-
+import { Circle, Square } from "./shapes/index";
 
 // import { Product } from './Product'
 
