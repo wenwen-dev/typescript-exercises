@@ -1,4 +1,5 @@
 // import { Circle } from "./shapes";
+import Store, { Format } from "./storage";
 
 import { Circle } from "./shapes";
 
