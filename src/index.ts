@@ -1,4 +1,11 @@
-import { Circle, Square } from "./shapes/index";
+// import { Circle, Square } from "./shapes/index";
+
+import { calculateTax } from './tax'
+
+let tax = calculateTax(1000);
+
+console.log(tax);
+
 
 // import { Product } from './Product'
 
